@@ -279,9 +279,9 @@ class Game():
             with open(self.filename, "r") as f:
                 contents = f.readline().strip()
 
-            if contents == "start":
+            if contents[1:] == "start":
                 self.make_bot_move()
-            elif contents == "end":
+            elif contents[1:] == "end":
                 self.game_running = False
             elif contents.startswith("<"):
                 enemy_move = int(contents[1:])
